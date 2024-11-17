@@ -1,4 +1,4 @@
-package com.devsuperior.MyFirstProject;
+package com.devsuperior.MyFirstProject.repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;

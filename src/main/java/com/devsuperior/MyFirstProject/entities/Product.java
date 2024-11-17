@@ -1,35 +1,26 @@
 package com.devsuperior.MyFirstProject.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+public class Product  implements Serializable{
 
-public class Category implements Serializable {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	
 	
 	private Long id;
 	private String name;
+	private Double price;
 	
-	@JsonIgnore
-	private List<Product> products = new ArrayList<>();
-	
-	public Category() {
-		super();
-		// TODO Auto-generated constructor stub
+	private Category category;
+
+	public Product() {
 	}
 
-	public Category(Long id, String name) {
-		super();
+	public Product(Long id, String name, Double price, Category category) {
 		this.id = id;
 		this.name = name;
+		this.price = price;
+		this.category = category;
 	}
 
 	public Long getId() {
@@ -47,11 +38,22 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public List<Product> getProducts() {
-		return products;
+
+	public Double getPrice() {
+		return price;
 	}
 
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
 	@Override
 	public int hashCode() {
@@ -66,15 +68,11 @@ public class Category implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Category other = (Category) obj;
+		Product other = (Product) obj;
 		return Objects.equals(id, other.id);
 	}
 	
 	
-
-	
-
 	
 	
-
 }
